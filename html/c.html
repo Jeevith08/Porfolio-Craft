@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/samplestyle.css">
+    <link rel="stylesheet" href="/css/color-1.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/style-switcher.css">
+    <style>
+        /* Styling for the input field and button */
+        .edit-container {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        #nameInput {
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #updateNameBtn {
+            padding: 8px 12px;
+            font-size: 14px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        #updateNameBtn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function updateName() {
+            var newName = document.getElementById("nameInput").value;
+            if (newName.trim() !== "") {
+                document.querySelector(".name").innerText = newName;
+                document.querySelector(".logo a").innerHTML = "<span>" + newName.charAt(0) + "</span>" + newName;
+                document.querySelector(".about-text h3").innerHTML = "I'm " + newName + "<span> App Developer </span>";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="aside">
+            <div class="logo">
+                <a href="#"><span>J</span>ohn</a>
+            </div>
+        </div>
+        <div class="main-content">
+            <section class="home section" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info padd-15">
+                            <h3 class="hello">Hello, <span class="name">John</span> Here</h3>
+                            <h3 class="my-profession">I'm <span class="typing">App Developer</span></h3>
+                            <p>I'm an App Developer with basic experience in Android and iOS development.</p>
+
+                            <!-- Input field and button for updating the name -->
+                            <div class="edit-container">
+                                <input type="text" id="nameInput" placeholder="Enter Your Name">
+                                <button id="updateNameBtn" onclick="updateName()">Update Name</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+
+</html>
